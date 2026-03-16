@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operator Face Registration</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color:#f4f4f9;
+    color:#333;
+}
+
+.container{
+    width:100%;
+    max-width:700px;
+    margin:0 auto;
+    padding:60px 20px;
+}
+
+.header{
+    text-align:center;
+    background-color:#0078d4;
+    color:#fff;
+    padding:30px 20px;
+    border-radius:8px;
+    margin-bottom:30px;
+}
+
+.main-content{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:30px;
+}
+
+.scan-section{
+    padding:30px;
+    background-color:#fff;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.scan-section h2{
+    margin-bottom:20px;
+}
+
+.face-scan-area{
+    width:220px;
+    height:220px;
+    border-radius:10px;
+    border:3px solid #0078d4;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#e9f3ff;
+}
+
+.face-icon{
+    font-size:90px;
+}
+
+.scan-line{
+    position:absolute;
+    width:100%;
+    height:3px;
+    background:#0078d4;
+    top:0;
+    animation:scan 2s infinite;
+}
+
+@keyframes scan{
+    0%{top:0;}
+    50%{top:100%;}
+    100%{top:0;}
+}
+
+.scan-btn{
+    margin-top:25px;
+    padding:12px 24px;
+    background-color:#0078d4;
+    color:#fff;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.scan-btn:hover{
+    background-color:#005c9e;
+}
+
+.scan-result{
+    margin-top:20px;
+    font-size:16px;
+    text-align:center;
+}
+
+.register-btn{
+    margin-top:20px;
+    padding:12px 24px;
+    background:#28a745;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.register-btn:hover{
+    background:#1f7e34;
+}
+
+.footer{
+    margin-top:30px;
+}
+
+.back-btn{
+    background-color:#f44336;
+    color:white;
+    padding:12px 24px;
+    border:none;
+    border-radius:5px;
+    font-size:18px;
+    cursor:pointer;
+    margin:auto;
+    display:block;
+}
+
+.back-btn:hover{
+    background:#d32f2f;
+}
+
+@media(max-width:768px){
+
+.container{
+    padding:50px 15px;
+}
+
+.scan-btn,.register-btn,.back-btn{
+    font-size:16px;
+    padding:10px 20px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+<h1>Face Biometric Operator Registration</h1>
+<p>Register Operator Using Face Scan</p>
+</header>
+
+<main class="main-content">
+
+<section class="scan-section">
+
+<h2>Face Scan</h2>
+
+<div class="face-scan-area">
+<div class="scan-line"></div>
+<div class="face-icon">👤</div>
+</div>
+
+<button class="scan-btn">Start Face Scan</button>
+
+<div class="scan-result">
+<p>Scan Status: <span>Waiting for scan</span></p>
+</div>
+
+<button class="register-btn">Register Operator</button>
+
+</section>
+
+</main>
+
+<footer class="footer">
+<button class="back-btn">Back</button>
+</footer>
+
+</div>
+
+</body>
+</html>
